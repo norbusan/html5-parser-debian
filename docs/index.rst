@@ -1,4 +1,4 @@
-html5-parser
+
 ================
 
 |pypi| |unix_build| |windows_build|
@@ -10,8 +10,7 @@ in C using a variant of the `gumbo parser
 transformed into an `lxml <http://lxml.de/>`__ tree, also in C, yielding parse
 times that can be **a thirtieth** of the html5lib parse times. That is a
 speedup of **30x**. This differs, for instance, from the gumbo python bindings,
-where the initial parsing is done in C but the transformation into the final
-tree is done in python. 
+abcdef
 
 
 Installation
@@ -26,10 +25,7 @@ On a Unix-y system, with a working C99 compiler, simply run:
 
     pip install --no-binary lxml html5-parser
 
-It is important that lxml is installed with the ``--no-binary`` flag. This is
-because without it, lxml uses a static copy of libxml2. For html5-parser to
-work it must use the same libxml2 implementation as lxml. This is only possible
-if libxml2 is loaded dynamically.
+
 
 You can setup html5-parser to run from a source checkout as follows:
 
@@ -97,7 +93,7 @@ becomes
     <html>
         <head/>
         <body>
-            <p xmlns:n="my namespace">
+            <p xmlns:n="project">
                 <n:tag n:attr="a"/>
             </p>
         </body>
@@ -156,9 +152,9 @@ speedup of **37x**. The output from the script on my system is:
 
     Parser            |Tree              |Supports HTML 5   |Speedup (factor)  |
     ===============================================================================
-    html5lib          |lxml              |yes               |35                |
-    soup+html5lib     |BeautifulSoup     |yes               |8                 |
-    soup+lxml.html    |BeautifulSoup     |no                |2                 | 
+    html5lib          |lxml              |yes               |50               |
+    soup+html5lib     |BeautifulSoup     |yes               |15                |
+    soup+lxml.html    |BeautifulSoup     |no                |20                | 
 
 
 There is further potential for speedup. Currently the gumbo subsystem uses
